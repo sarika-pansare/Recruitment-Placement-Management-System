@@ -89,7 +89,7 @@ def main():
                 break
 
             else:
-                print("Invalid choice.")
+                 print("Invalid menu choice! Please select a number between 1 and 6.")
 
         except Exception as exc:
             print("ERROR:", exc)
