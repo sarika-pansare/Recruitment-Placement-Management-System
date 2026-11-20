@@ -5,7 +5,10 @@ from rpms.util.validation import (
     is_valid_percentage,
     is_valid_backlog_count
 )
-
+def is_valid_name(name):
+    return bool(name and name.strip() and all(
+        char.isalpha() or char.isspace() for char in name
+    ))
 class CandidateService:
 
     def __init__(self, candidate_dao):
