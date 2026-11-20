@@ -5,16 +5,15 @@ from rpms.util.validation import (
     is_valid_percentage,
     is_valid_backlog_count
 )
-def is_valid_name(name):
-    return bool(name and name.strip() and name.replace(" ", "").isalpha())
+
 class CandidateService:
 
     def __init__(self, candidate_dao):
         self.candidate_dao = candidate_dao
 
     def add_candidate(self, candidate):
-        if not is_valid_name(candidate.name):
-         raise ValueError("Candidate name must contain letters only")
+        if not is_valid_email(candidate.email):
+            raise ValueError("Invalid email")
 
         if not is_valid_mobile(candidate.mobile):
             raise ValueError("Mobile must contain 10 digits")

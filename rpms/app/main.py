@@ -13,14 +13,15 @@ from rpms.service.activity_log_service import ActivityLogService
 
 def print_menu():
     print("\n==================================")
-    print("WELCOME TO RECRUITMENT & PLACEMENT MANAGEMENT")
+    print("RECRUITMENT & PLACEMENT SYSTEM")
     print("==================================")
-    print("1. Explore Registered Candidates")
-    print("2. Register a New Candidate")
-    print("3. Explore Available Job Opportunities")
-    print("4. Submit a Job Application")
-    print("5. View Candidate Technology Statistics")
-    print("6. Close the Application")
+    print("1. View Candidates")
+    print("2. Add Candidate")
+    print("3. View Open Jobs")
+    print("4. Apply for Job")
+    print("5. Candidate Technology Report")
+    print("6. Exit")
+
 
 def main():
     candidate_dao = CandidateDAO()
