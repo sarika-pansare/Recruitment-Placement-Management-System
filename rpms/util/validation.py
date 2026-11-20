@@ -1,8 +1,8 @@
 import re
 
-def is_valid_email(email: str) -> bool:
-    return bool(email and re.match(r"^[^@\s]+@[^@\s]+\.[^@\s]+$", email))
-
+def is_valid_email(email):
+    pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
+    return bool(email and re.match(pattern, email))
 def is_valid_mobile(mobile: str) -> bool:
     return bool(mobile and re.fullmatch(r"\d{10}", mobile))
 
