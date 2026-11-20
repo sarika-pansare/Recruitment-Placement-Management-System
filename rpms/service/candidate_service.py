@@ -36,10 +36,15 @@ class CandidateService:
         return self.candidate_dao.save(candidate)
 
     def get_candidate(self, candidate_id):
-        candidate = self.candidate_dao.find_by_id(candidate_id)
-        if not candidate:
-            raise CandidateNotFoundError(f"Candidate ID {candidate_id} not found")
-        return candidate
+    candidate = self.candidate_dao.find_by_id(candidate_id)
+
+    if candidate is None:
+        raise CandidateNotFoundError(
+            f"No candidate found with ID: {candidate_id}. "
+            "Please check the candidate ID and try again."
+        )
+
+    return candidate
 
     def get_all_candidates(self):
         return self.candidate_dao.find_all()
